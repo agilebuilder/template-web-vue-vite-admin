@@ -1,0 +1,67 @@
+version: "1.0"
+name: vue3-vite-admin
+description: Vue3 + Vite + TypeScript + Pinia + Vue Router + Element Plus 中后台管理模板
+variables:
+  enabled: true
+  delimiter: "%"
+  filePatterns:
+    mode: include
+    patterns:
+      - package.json
+      - vite.config.ts
+      - index.html
+      - README.md
+      - .env.development
+      - .env.production
+  inquirerQuestions:
+    - name: projectName
+      type: input
+      message: 项目名称
+      default: demo-admin
+      required: true
+    - name: description
+      type: input
+      message: 项目描述
+      default: 一个中后台管理系统
+    - name: author
+      type: input
+      message: 作者
+      default: ""
+    - name: port
+      type: number
+      message: 开发服务器端口
+      default: 5173
+    - name: packageManager
+      type: list
+      message: 包管理器
+      choices:
+        - pnpm
+        - npm
+        - yarn
+      default: pnpm
+hooks:
+  after_write:
+    scriptType: shell
+    script: git init && git add -A && git commit -m "chore: init project from template"
+    errorHandling: warn
+market:
+  slug: vue3-vite-admin
+  name: Vue3 Vite 中后台管理模板
+  summary: 基于 Vue3 + Vite + TypeScript + Pinia + Element Plus 的中后台管理系统脚手架
+  description: |
+    一个开箱即用的中后台管理系统前端模板，内置：
+
+    - **布局系统**：侧边栏菜单 + 顶部导航 + 主内容区的经典后台布局
+    - **路由方案**：Vue Router 配置，含 404 页面与 `v-permission` 权限指令示例
+    - **状态管理**：Pinia user store 示例（登录态、权限点）
+    - **网络层**：axios 二次封装，请求/响应拦截器统一处理 Token 与错误提示
+    - **环境变量**：`.env.development` / `.env.production` 分环境配置
+    - **工程规范**：ESLint + Prettier + EditorConfig，代码风格统一
+  category: 前端应用
+  tags:
+    - Vue3
+    - Vite
+    - TypeScript
+    - Element Plus
+    - 中后台
+  version: 1.0.0

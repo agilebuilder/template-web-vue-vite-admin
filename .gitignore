@@ -1,0 +1,28 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+dist-ssr/
+
+# 锁文件（模板不提交，生成后由所选包管理器重新生成）
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# 日志
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# 编辑器与系统
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# 缓存
+*.tsbuildinfo
+.eslintcache
