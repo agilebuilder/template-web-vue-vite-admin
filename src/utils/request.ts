@@ -33,11 +33,12 @@ service.interceptors.response.use(
 )
 
 export function get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
-  return service.get(url, config)
+  // 响应拦截器已解包 data，此处断言为 T
+  return service.get(url, config) as Promise<T>
 }
 
 export function post<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
-  return service.post(url, data, config)
+  return service.post(url, data, config) as Promise<T>
 }
 
 export default service
