@@ -65,3 +65,18 @@ market:
     - Element Plus
     - 中后台
   version: 1.0.0
+  gitUrl: https://github.com/agilebuilder/template-web-vue-vite-admin.git
+  defaultBranch: main
+  englishMetadata:
+    name: Vue Vite admin app
+    summary: Vue 3 admin starter with Vite, TypeScript, Pinia and Element Plus.
+    description: An admin application starter with Composition API, Vue Router,
+      Pinia state, Element Plus components, an Axios request layer and permission
+      directives. Includes strict type checking, lint and formatting commands.
+    category: Frontend apps
+    tags:
+      - Vue 3
+      - Vite
+      - TypeScript
+      - Element Plus
+      - Admin
