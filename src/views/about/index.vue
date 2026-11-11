@@ -1,10 +1,10 @@
 <template>
   <el-card>
-    <template #header>关于</template>
+    <template #header>About</template>
     <el-descriptions :column="1" border>
-      <el-descriptions-item label="应用名称">{{ title }}</el-descriptions-item>
-      <el-descriptions-item label="接口地址">{{ apiBaseUrl }}</el-descriptions-item>
-      <el-descriptions-item label="技术栈">
+      <el-descriptions-item label="App Name">{{ title }}</el-descriptions-item>
+      <el-descriptions-item label="API Base URL">{{ apiBaseUrl }}</el-descriptions-item>
+      <el-descriptions-item label="Tech Stack">
         Vue3 + Vite + TypeScript + Pinia + Vue Router + Element Plus
       </el-descriptions-item>
     </el-descriptions>

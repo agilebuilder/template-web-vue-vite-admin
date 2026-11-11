@@ -3,10 +3,10 @@ import type { Directive } from 'vue'
 import { useUserStore } from '@/store/user'
 
 /**
- * v-permission 权限指令示例：
- *   <el-button v-permission="'user:create'">新增</el-button>
- *   <el-button v-permission="['user:create', 'user:update']">新增或编辑</el-button>
- * 当前用户不具备任一所需权限点时，直接移除该元素。
+ * v-permission directive example:
+ *   <el-button v-permission="'user:create'">Create</el-button>
+ *   <el-button v-permission="['user:create', 'user:update']">Create or Edit</el-button>
+ * The element is removed when the current user lacks any of the required permissions.
  */
 const permission: Directive<HTMLElement, string | string[]> = {
   mounted(el, binding) {

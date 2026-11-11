@@ -1,6 +1,6 @@
 version: "1.0"
 name: vue3-vite-admin
-description: Vue3 + Vite + TypeScript + Pinia + Vue Router + Element Plus 中后台管理模板
+description: Vue3 + Vite + TypeScript + Pinia + Vue Router + Element Plus admin dashboard template
 variables:
   enabled: true
   delimiter: "%"
@@ -11,29 +11,30 @@ variables:
       - vite.config.ts
       - index.html
       - README.md
+      - README.zh-CN.md
       - .env.development
       - .env.production
   inquirerQuestions:
     - name: projectName
       type: input
-      message: 项目名称
+      message: Project name
       default: demo-admin
       required: true
     - name: description
       type: input
-      message: 项目描述
-      default: 一个中后台管理系统
+      message: Project description
+      default: An admin dashboard app
     - name: author
       type: input
-      message: 作者
+      message: Author
       default: ""
     - name: port
       type: number
-      message: 开发服务器端口
+      message: Dev server port
       default: 5173
     - name: packageManager
       type: list
-      message: 包管理器
+      message: Package manager
       choices:
         - pnpm
         - npm

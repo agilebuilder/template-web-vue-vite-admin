@@ -6,7 +6,7 @@ const service: AxiosInstance = axios.create({
   timeout: 10000,
 })
 
-// 请求拦截器：统一携带 Token
+// Request interceptor: attach the token uniformly
 service.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token')
@@ -18,11 +18,11 @@ service.interceptors.request.use(
   (error) => Promise.reject(error),
 )
 
-// 响应拦截器：统一解包数据与错误提示
+// Response interceptor: unwrap data and surface error messages uniformly
 service.interceptors.response.use(
   (response) => response.data,
   (error) => {
-    const message = error.response?.data?.message ?? error.message ?? '请求失败，请稍后重试'
+    const message = error.response?.data?.message ?? error.message ?? 'Request failed, please try again later'
     ElMessage.error(message)
     if (error.response?.status === 401) {
       localStorage.removeItem('token')
@@ -33,7 +33,7 @@ service.interceptors.response.use(
 )
 
 export function get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
-  // 响应拦截器已解包 data，此处断言为 T
+  // The response interceptor already unwrapped data; assert it as T
   return service.get(url, config) as Promise<T>
 }
 

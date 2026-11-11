@@ -4,10 +4,10 @@
       <div class="app-logo">{{ title }}</div>
       <el-menu :default-active="activeMenu" router class="app-menu">
         <el-menu-item index="/dashboard">
-          <span>工作台</span>
+          <span>Dashboard</span>
         </el-menu-item>
         <el-menu-item index="/about">
-          <span>关于</span>
+          <span>About</span>
         </el-menu-item>
       </el-menu>
     </el-aside>
@@ -17,14 +17,14 @@
         <span class="app-header__title">{{ route.meta.title }}</span>
         <el-dropdown @command="handleCommand">
           <span class="app-header__user">
-            {{ userStore.userInfo?.name ?? '未登录' }}
+            {{ userStore.userInfo?.name ?? 'Not logged in' }}
           </span>
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item v-if="!userStore.isLoggedIn" command="login">
-                模拟登录
+                Mock Login
               </el-dropdown-item>
-              <el-dropdown-item v-else command="logout">退出登录</el-dropdown-item>
+              <el-dropdown-item v-else command="logout">Log Out</el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>

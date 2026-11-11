@@ -12,13 +12,13 @@ const routes: RouteRecordRaw[] = [
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index.vue'),
-        meta: { title: '工作台' },
+        meta: { title: 'Dashboard' },
       },
       {
         path: 'about',
         name: 'About',
         component: () => import('@/views/about/index.vue'),
-        meta: { title: '关于' },
+        meta: { title: 'About' },
       },
     ],
   },
@@ -26,7 +26,7 @@ const routes: RouteRecordRaw[] = [
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('@/views/error/404.vue'),
-    meta: { title: '页面不存在' },
+    meta: { title: 'Page Not Found' },
   },
 ]
 

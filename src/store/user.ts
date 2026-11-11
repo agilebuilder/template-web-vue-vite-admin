@@ -22,8 +22,9 @@ export const useUserStore = defineStore('user', {
   },
   actions: {
     /**
-     * 登录示例：真实项目应调用 `utils/request` 封装的接口，
-     * 这里用本地模拟数据演示状态流转。
+     * Login example: a real project should call the API through the
+     * `utils/request` wrapper; local mock data is used here to demonstrate
+     * the state transitions.
      */
     async login(username: string, _password: string) {
       this.token = `mock-token-${Date.now()}`
